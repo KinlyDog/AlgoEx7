@@ -24,32 +24,174 @@ public class OrderedList<T> {
     }
 
     public int compare(T v1, T v2) {
+        if (v1 instanceof String) {
+            return v1.toString().trim().compareTo(v2.toString().trim());
+        }
 
-        return 0;
+        return Integer.compare((int) v1, (int) v2);
     }
 
     public void add(T value) {
+        Node<T> item = new Node<>(value);
 
+        if (_ascending) {
+            addAsc(item);
+            return;
+        }
+
+        addDesc(item);
     }
 
+    public void addAsc(Node<T> item) {
+        if (head == null || compare(head.value, item.value) >= 0) {
+            insertFirst(item);
+            return;
+        }
+
+        if (compare(tail.value, item.value) <= 0) {
+            insertLast(item);
+            return;
+        }
+
+        Node<T> node = head;
+
+        while (node != null && compare(node.value, item.value) < 0) {
+            node = node.next;
+        }
+
+        insert(item, node);
+    }
+
+    public void addDesc(Node<T> item) {
+        if (head == null || compare(head.value, item.value) <= 0) {
+            insertFirst(item);
+            return;
+        }
+
+        if (compare(tail.value, item.value) >= 0) {
+            insertLast(item);
+            return;
+        }
+
+        Node<T> node = head;
+
+        while (node != null && compare(node.value, item.value) > 0) {
+            node = node.next;
+        }
+
+        insert(item, node);
+    }
+
+    public void insert(Node<T> item, Node<T> node) {
+        item.prev = node.prev;
+        item.next = node;
+
+        node.prev.next = item;
+        node.prev = item;
+    }
+
+    public void insertFirst(Node<T> _nodeToInsert) {
+        if (head == null) {
+            head = _nodeToInsert;
+            tail = _nodeToInsert;
+
+            return;
+        }
+
+        _nodeToInsert.next = head;
+        head.prev = _nodeToInsert;
+        head = _nodeToInsert;
+    }
+
+    public void insertLast(Node<T> _item) {
+        if (head == null) {
+            head = _item;
+        } else {
+            tail.next = _item;
+            _item.prev = tail;
+        }
+
+        tail = _item;
+    }
+
+    // ok
     public Node<T> find(T val) {
+        Node<T> node = head;
+
+        while (_ascending && node != null && compare(node.value, val) < 0) {
+            node = node.next;
+        }
+
+        while (!_ascending && node != null && compare(node.value, val) > 0) {
+            node = node.next;
+        }
+
+        if (node.value == val) {
+            return node;
+        }
 
         return null;
     }
 
-    public void delete(T val) {
+    // ok
+    public boolean delete(T val) {
+        if (find(val) == null) {
+            return false;
+        }
 
+        Node<T> node = head;
+
+        if (node.next == null) {
+            clear(_ascending);
+            return true;
+        }
+
+        if (head.value == val) {
+            head = node.next;
+            head.prev = null;
+            node.next = null;
+
+            return true;
+        }
+
+        while (node.value != val) {
+            node = node.next;
+        }
+
+        if (node.next != null) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+
+            node.prev = null;
+            node.next = null;
+
+            return true;
+        }
+
+        tail = node.prev;
+        tail.next = null;
+        node.prev = null;
+
+        return true;
     }
 
     public void clear(boolean asc) {
+        head = null;
+        tail = null;
+
         _ascending = asc;
-
-
     }
 
+    // ok?
     public int count() {
+        Node<T> node = head;
+        int c = 0;
 
-        return 0;
+        while (node != null) {
+            c++;
+        }
+
+        return c;
     }
 
     ArrayList<Node<T>> getAll() {
@@ -62,15 +204,6 @@ public class OrderedList<T> {
         }
 
         return r;
-    }
-
-    public static void main(String[] args) {
-        OrderedList list = new OrderedList(true);
-
-        for (int i = 0; i < 10; i++) {
-            list.add(i);
-        }
-
     }
 
 }
