@@ -118,6 +118,17 @@ public class OrderedList<T> {
     public Node<T> find(T val) {
         Node<T> node = head;
 
+        int compHead = compare(head.value, val);
+        int compTail = compare(tail.value, val);
+
+        if (_ascending && (compHead > 0 || compTail < 0)) {
+            return null;
+        }
+
+        if (!_ascending && (compHead < 0 || compTail > 0)) {
+            return null;
+        }
+
         while (_ascending && node != null && compare(node.value, val) < 0) {
             node = node.next;
         }
@@ -182,7 +193,7 @@ public class OrderedList<T> {
         _ascending = asc;
     }
 
-    // ok?
+    // ok
     public int count() {
         Node<T> node = head;
         int c = 0;
