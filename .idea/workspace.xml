@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6a3b8e-a4a8-457d-a22b-3ce6a758b32c" name="Changes" comment="Update project">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderedList.java" afterDir="false" />
-    </list>
+    <list default="true" id="5a6a3b8e-a4a8-457d-a22b-3ce6a758b32c" name="Changes" comment="Update project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +59,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667116640928</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update project">
+      <created>1667118974373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667118974373</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update project">
+      <created>1667119046103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667119046103</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

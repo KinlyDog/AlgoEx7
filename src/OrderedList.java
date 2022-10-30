@@ -200,6 +200,7 @@ public class OrderedList<T> {
 
         while (node != null) {
             c++;
+            node = node.next;
         }
 
         return c;
