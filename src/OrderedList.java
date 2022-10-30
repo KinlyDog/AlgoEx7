@@ -116,6 +116,8 @@ public class OrderedList<T> {
 
     // ok
     public Node<T> find(T val) {
+        exception();
+
         Node<T> node = head;
 
         int compHead = compare(head.value, val);
@@ -146,6 +148,8 @@ public class OrderedList<T> {
 
     // ok
     public boolean delete(T val) {
+        exception();
+
         if (find(val) == null) {
             return false;
         }
@@ -195,6 +199,10 @@ public class OrderedList<T> {
 
     // ok
     public int count() {
+        if (head == null) {
+            return 0;
+        }
+
         Node<T> node = head;
         int c = 0;
 
@@ -218,4 +226,9 @@ public class OrderedList<T> {
         return r;
     }
 
+    public void exception() {
+        if (head == null) {
+            throw new NullPointerException("NullPointerException");
+        }
+    }
 }
