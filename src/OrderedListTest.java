@@ -60,6 +60,11 @@ class OrderedListTest {
             listAsc.add(i);
         }
 
+        while (listDesc.count() != 0) {
+            assertTrue(listDesc.delete(listDesc.head));
+        }
+        assertFalse(listDesc.delete(listDesc.head));
+
         assertTrue(listAsc.delete(3));
         assertTrue(listAsc.find(3) == null);
     }

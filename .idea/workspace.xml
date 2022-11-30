@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a6a3b8e-a4a8-457d-a22b-3ce6a758b32c" name="Changes" comment="Fix throw exception">
+    <list default="true" id="5a6a3b8e-a4a8-457d-a22b-3ce6a758b32c" name="Changes" comment="Update tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderedListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderedListTest.java" afterDir="false" />
     </list>
@@ -45,7 +45,8 @@
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true"
+    "create.test.in.the.same.root": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -114,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667129136887</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update tests">
+      <created>1667130268066</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667130268066</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +141,7 @@
     <MESSAGE value="Update project" />
     <MESSAGE value="Fix count problem (infinity)" />
     <MESSAGE value="Fix throw exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix throw exception" />
+    <MESSAGE value="Update tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update tests" />
   </component>
 </project>
